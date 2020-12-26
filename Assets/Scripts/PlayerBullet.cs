@@ -20,17 +20,18 @@ public class PlayerBullet : MonoBehaviour
         transform.position = new Vector2( transform.position.x,transform.position.y + (speed * Time.deltaTime));
         //GetComponent<Rigidbody2D>().velocity = transform.up * speed;
     }
-    void OnTriggerEnter2D(Collider2D hitInfo)
+    private void OnTriggerEnter2D(Collider2D hitInfo)
     {
         Enemy enemy = hitInfo.GetComponent<Enemy>();
         if (enemy != null)
         {
             enemy.TakeDamage(myDamage);
-            //Debug.Log("we got him");
+            Debug.Log("we got him");
             //Destroy(this.gameObject);
             gameObject.SetActive(false);
+            
         }
-        
+
 
     }
     // Update is called once per frame

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4645957345031667878}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 4645957346638197730}
   - component: {fileID: 4645957346638197756}
   - component: {fileID: 1386233425}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -104,9 +104,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 5a8c69aeaf61ae140a833d0598b2f882, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 885be939a81deb647ba9c0aaf9013f56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  moveSpeed: 5
   tilt: 10
   rb: {fileID: 4645957346638197731}
   boundary:
@@ -185,11 +185,19 @@ MonoBehaviour:
     xMax: 2.3
     YMin: -4.6
     YMax: 0.7
+  playerInfo: {fileID: 1386233425}
   firePoint: {fileID: 4645957345031667878}
   playerBullet: {fileID: 1091720005254774976, guid: 8cf60ce90cd1acf4db484e2121a86232,
     type: 3}
   fireRate: 0.2
   shotCD: 0
+  soundsManager: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  playerSprite: {fileID: 0}
+  spriteBoundLeft: 0
+  spriteBoundRight: 0
+  spriteBoundUp: 0
+  spriteBoundDown: 0
 --- !u!114 &1386233425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,6 +210,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a381fc61738a47d4da42e71843183f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1000
+  maxHealth: 10
   health: 200
-  isAlive: 0
+  isAlive: 1
+  healthBar: {fileID: 0}
+  playerDeadSound: {fileID: 8300000, guid: c3bb5177b67b4924c8f487718c9ab154, type: 3}
+  soundVolume: 1
+  boomVfx: {fileID: 5778575546896254042, guid: 0b3b0835e4fd6e949a337b419a3fb94d, type: 3}

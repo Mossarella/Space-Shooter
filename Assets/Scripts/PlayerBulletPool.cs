@@ -8,9 +8,9 @@ public class PlayerBulletPool : MonoBehaviour
     // Start is called before the first frame update
 
     [SerializeField] public GameObject pooledBullet;
-    private bool notEnoughBulletInPool = true;
+    public bool notEnoughBulletInPool = true;
 
-    private List<GameObject> bullets;
+    public List<GameObject> bullets;
 
    
 

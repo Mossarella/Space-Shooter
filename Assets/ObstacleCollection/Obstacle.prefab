@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6d7ed658bc7a12a4da7d78581d661511, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c441d13c5c32ff0478ff8eaf2a2a1a95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tumble: 39.1
+  tumble: 39
 --- !u!114 &1621893786545754718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eecfdc18c03f6de43aab355e2de4303d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
 --- !u!60 &1621893786545754719
 PolygonCollider2D:
   m_ObjectHideFlags: 0

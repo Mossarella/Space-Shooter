@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4955514383990303041}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FirePointEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 1398807903268337554}
   - component: {fileID: 7016590944977982417}
   - component: {fileID: 8089626448863375778}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 827c9cd4a3943534f909ac6473e17288, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.09411764, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -126,7 +126,7 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6937865895614684163}
   m_BodyType: 0
-  m_Simulated: 0
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -152,6 +152,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   health: 0
+  audioSource: {fileID: 0}
+  boomVfx: {fileID: 5778575546896254042, guid: 0b3b0835e4fd6e949a337b419a3fb94d, type: 3}
+  enemyDeadSound: {fileID: 8300000, guid: 54e2569ad9245e94e9dfc8826518ae1b, type: 3}
+  soundVolume: 1
 --- !u!114 &1398807903268337554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,6 +173,8 @@ MonoBehaviour:
     type: 3}
   fireRate: 2
   shotCD: 0
+  enemyShootSound: {fileID: 8300000, guid: 90d8ebdf1fcc353409a54402c00b12d0, type: 3}
+  soundVolume: 1
 --- !u!114 &7016590944977982417
 MonoBehaviour:
   m_ObjectHideFlags: 0

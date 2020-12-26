@@ -19,12 +19,14 @@ public class Controller : MonoBehaviour
 
     public Rigidbody2D rb;
     public Boundary boundary;
+    public PlayerInfo playerInfo;
 
     public Transform firePoint;
     public GameObject playerBullet;
     public float fireRate;
     public float shotCD;
 
+    public SoundsManager soundsManager;
     [HideInInspector]public SpriteRenderer spriteRenderer;
     [HideInInspector]public Sprite playerSprite;
     [HideInInspector] public float spriteBoundLeft, spriteBoundRight, spriteBoundUp, spriteBoundDown;
@@ -33,8 +35,9 @@ public class Controller : MonoBehaviour
     {
         shotCD = fireRate;
         rb = GetComponent<Rigidbody2D>();
-
+        playerInfo = GetComponent<PlayerInfo>();
         Camera gameCamera = Camera.main;
+        soundsManager = FindObjectOfType<SoundsManager>();
 
         boundary.xMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).x;
         boundary.xMax = gameCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x;
@@ -72,8 +75,13 @@ public class Controller : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, deltaX/Time.deltaTime * -tilt, 0);
 
         //Debug.Log(deltaX);
-        
+        if(playerInfo.isAlive)
+        {
         Fire();
+            
+        }
+
+        
     }
 
     public void Fire()
@@ -93,6 +101,8 @@ public class Controller : MonoBehaviour
                 bul.SetActive(true);
 
                 shotCD  -=shotCD;
+
+                soundsManager.PlaySound(4);
             }
         }
         else if (shotCD < fireRate)
